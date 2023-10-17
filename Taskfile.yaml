@@ -1,0 +1,48 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  default:
+    cmds:
+      - task -l
+    silent: true
+
+  build:
+    cmds:
+      - mkdir -p ./_output/
+      - go build -o ./_output/git-vwi .
+    desc: Build the git-vwi executable.
+
+  clean:
+    cmds:
+      - go clean --testcache
+      - rm -rf ./_output/
+    desc: Clean the working directory and clear test cache.
+
+  fmt:
+    cmds:
+      - go fmt ./...
+    desc: Runs `gofmt` on all source files in repository.
+
+  hash:
+    cmds:
+      - git rev-parse --short HEAD
+    desc: Get the short hash of the latest commit.
+    silent: true
+
+  install:
+    deps:
+      - clean
+      - build
+    cmds:
+      - install ./_output/git-vwi ~/bin/git-vwi
+    desc: Build and install git-flow to your userdir bin (`~/bin/`).
+
+  test:
+    deps:
+      - clean
+      - fmt
+    cmds:
+      - go test -cover ./...
+    desc: Runs all Go tests in repository.
