@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: ci
+on:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-go@v4
+        with:
+          go-version: stable
+      - name: Install Task
+        uses: arduino/setup-task@v1
+      - name: Test
+        run: task test
