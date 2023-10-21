@@ -16,12 +16,17 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "git-vwi",
 	Short: "Git add-on for opening work item details in your browser based on the current branch.",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
+	Long: `Git add-on for opening work item details in your browser based on the
+current branch. This add-on relies on configuration through Git's global properties:
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+[git-view-work-item]
+    url = "https://dev.azure.com/org/project/_workitems/edit/{{ .Identifier }}"
+    regex = "[0-9]+"
+
+You can use Go text templates to insert the following properties into the URL:
+- Identifier (the identifier extracted from the current branch name)
+
+Learn more about Go text templates at https://pkg.go.dev/text/template`,
 	PreRun: func(cmd *cobra.Command, _ []string) {
 		if cmd.Use != "version" {
 			// NOTE: Global preflight. Runs before any commands are executed, excluding built-in help messages.
@@ -35,11 +40,11 @@ to quickly create a Cobra application.`,
 
 		if len(urlConfig) == 0 {
 			fmt.Println("fatal: URL configuration property not found")
-			fmt.Println("use with -h or --help flag to view help")
+			fmt.Println("run `git-vwi -h` or `git-vwi help` flag to view help")
 			os.Exit(4)
 		} else if len(regexConfig) == 0 {
 			fmt.Println("fatal: identifier regular expression configuration property not found")
-			fmt.Println("use with -h or --help flag to view help")
+			fmt.Println("run `git-vwi -h` or `git-vwi help` flag to view help")
 			os.Exit(4)
 		}
 
@@ -49,10 +54,11 @@ to quickly create a Cobra application.`,
 
 		type Properties struct {
 			Identifier string
+			// TODO: add more properties, like the repository name or current directory
 		}
 
 		if !regex.MatchString(currentBranch) {
-			fmt.Println("warn: no matches for regular expression")
+			fmt.Println("fatal: no matches for regular expression")
 			fmt.Println("")
 			fmt.Println("Current git branch: " + currentBranch)
 			fmt.Println("Regular expression: " + regex.String())
@@ -66,6 +72,7 @@ to quickly create a Cobra application.`,
 		templ := template.Must(template.New("templ").Parse(urlConfig))
 		templ.Execute(&finalUrl, props)
 
+		fmt.Println(finalUrl.String())
 		// TODO: make compatible with non-macOS environments
 		shell.Execute("open", finalUrl.String())
 	},
