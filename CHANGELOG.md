@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/hugginsio/git-view-work-item/compare/v1.0.0...v1.1.0) (2023-10-22)
+
+
+### Features
+
+* add props, copy flag ([#6](https://github.com/hugginsio/git-view-work-item/issues/6)) ([38c01d4](https://github.com/hugginsio/git-view-work-item/commit/38c01d41cd17d7b41c00aecea35672f7d8517e9e))
+
+
+### Bug Fixes
+
+* **actions:** remove skip-github-release ([#7](https://github.com/hugginsio/git-view-work-item/issues/7)) ([8aa5e10](https://github.com/hugginsio/git-view-work-item/commit/8aa5e1039f3ff3dc60c91a3344f1e65ef5b271b9))
+
 ## 1.0.0 (2023-10-21)
 
 
