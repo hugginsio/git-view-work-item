@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.4.0](https://github.com/hugginsio/git-view-work-item/compare/v1.3.0...v1.4.0) (2023-10-22)
+
+
+### Features
+
+* **goreleaser:** enable Windows, Linux ([b644eef](https://github.com/hugginsio/git-view-work-item/commit/b644eef2d4c3c8cd9550141c50e8cf76b5dd4f8e))
+* switch to pkg/browser for opening URL ([0e05783](https://github.com/hugginsio/git-view-work-item/commit/0e05783cd4cfbc3b40617853a2ae4cf72a221771))
+* use cross platform library for opening URLs ([#15](https://github.com/hugginsio/git-view-work-item/issues/15)) ([83b4c70](https://github.com/hugginsio/git-view-work-item/commit/83b4c7096e03895d5a169cc98abb434d8bf18a90)), closes [#14](https://github.com/hugginsio/git-view-work-item/issues/14)
+
 ## [1.3.0](https://github.com/hugginsio/git-view-work-item/compare/v1.2.0...v1.3.0) (2023-10-22)
 
 
