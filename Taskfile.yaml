@@ -50,6 +50,8 @@ tasks:
     desc: Runs all Go tests in repository.
 
   release:local:
+    deps:
+      - clean
     cmds:
       - goreleaser release --snapshot --clean
     desc: Run a local-only release with goreleaser
