@@ -23,7 +23,8 @@ jobs:
       release_created: ${{ steps.release.outputs.release_created }}
   goreleaser:
     runs-on: ubuntu-latest
-    if: ${{ steps.release-please.outputs.release_created }}
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
     steps:
       - uses: actions/checkout@v3
         with:
