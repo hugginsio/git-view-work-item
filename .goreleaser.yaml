@@ -35,3 +35,18 @@ archives:
 
 changelog:
   skip: true
+
+brews:
+  - repository:
+      owner: hugginsio
+      name: homebrew-tap
+    folder: Formula
+    homepage: https://go.huggins.io/prj/git-view-work-item
+    description: Git add-on for opening work item details in your browser based on the current branch.
+    license: BSD-2-Clause
+    test: |
+      system "#{bin}/git-vwi version"
+    dependencies:
+      - name: go
+        type: optional
+      - name: git
