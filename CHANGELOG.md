@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.5.0](https://github.com/hugginsio/git-view-work-item/compare/v1.4.0...v1.5.0) (2023-10-22)
+
+
+### Features
+
+* **goreleaser:** add Homebrew Tap ([2a63f9d](https://github.com/hugginsio/git-view-work-item/commit/2a63f9d37010fb6c3947bcb51240f880211a57bf)), closes [#17](https://github.com/hugginsio/git-view-work-item/issues/17)
+* **goreleaser:** add Homebrew Tap ([#18](https://github.com/hugginsio/git-view-work-item/issues/18)) ([5a6d904](https://github.com/hugginsio/git-view-work-item/commit/5a6d904eda9f1031c66c54535a77d9a57bb1e018)), closes [#17](https://github.com/hugginsio/git-view-work-item/issues/17)
+
+
+### Bug Fixes
+
+* **actions:** add PAT to goreleaser job ([6e66a69](https://github.com/hugginsio/git-view-work-item/commit/6e66a6951352f1441a333453f7ed36ffcece2bd1))
+* **actions:** add PAT to goreleaser job ([#20](https://github.com/hugginsio/git-view-work-item/issues/20)) ([1b99f5c](https://github.com/hugginsio/git-view-work-item/commit/1b99f5cbc1f8553b1905a9aefedabae90b4b1802))
+
 ## [1.4.0](https://github.com/hugginsio/git-view-work-item/compare/v1.3.0...v1.4.0) (2023-10-22)
 
 
