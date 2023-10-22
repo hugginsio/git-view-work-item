@@ -20,5 +20,12 @@ The following properties are available for you to insert into the URL:
 
 You can learn more about Go text templates in the [package documentation][go-text-templates].
 
+## Installation
+
+1. Navigate to the [releases page][github-releases] and download the appropriate binary for your system.
+2. Copy the `git-vwi` binary to somewhere on your PATH.
+3. Run `git vwi -h` in your terminal to validate.
+
 <!-- References -->
 [go-text-templates]: https://pkg.go.dev/text/template
+[github-releases]: https://github.com/hugginsio/git-view-work-item/releases
