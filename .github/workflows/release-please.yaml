@@ -19,7 +19,6 @@ jobs:
             cmd/version.go
           package-name: git-view-work-item
           release-type: simple
-          skip-github-release: true
       - name: tag release
         if: ${{ steps.release.outputs.release_created }}
         run: |
