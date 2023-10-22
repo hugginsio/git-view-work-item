@@ -58,8 +58,6 @@ Learn more about Go text templates at https://pkg.go.dev/text/template`,
 				os.Exit(4)
 			}
 
-			// TODO: extract repository name with (?!.*\/).+[^\.git]
-
 			type Properties struct {
 				Directory  string
 				Identifier string
