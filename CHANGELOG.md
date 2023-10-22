@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.2.0](https://github.com/hugginsio/git-view-work-item/compare/v1.1.0...v1.2.0) (2023-10-22)
+
+
+### Features
+
+* **actions:** combine release-please and goreleaser ([#9](https://github.com/hugginsio/git-view-work-item/issues/9)) ([267d86f](https://github.com/hugginsio/git-view-work-item/commit/267d86fa39a5c9f1fd2a788017e636d19eb4b41a))
+* add goreleaser to Taskfile ([6aac667](https://github.com/hugginsio/git-view-work-item/commit/6aac6671d5df33a91851f9dc35dc7f1d78321c17))
+* goreleaser and documentation improvements ([#12](https://github.com/hugginsio/git-view-work-item/issues/12)) ([e96993b](https://github.com/hugginsio/git-view-work-item/commit/e96993b66be22151575d900f915664e659a0710e))
+* update project_name to fix binary name ([ca0fe7c](https://github.com/hugginsio/git-view-work-item/commit/ca0fe7c652eceef6d5caf796f1c9eb17c7786be2))
+
+
+### Bug Fixes
+
+* **actions:** modify goreleaser needs ([#10](https://github.com/hugginsio/git-view-work-item/issues/10)) ([7c88257](https://github.com/hugginsio/git-view-work-item/commit/7c8825798e325c5885a50d015a24bf38d937df78))
+
 ## [1.1.0](https://github.com/hugginsio/git-view-work-item/compare/v1.0.0...v1.1.0) (2023-10-22)
 
 
