@@ -1,11 +1,11 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
-name: release-please
+name: release
 on:
   push:
   pull_request:
 jobs:
-  release:
+  release-please:
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/main' }}
     permissions:
@@ -19,3 +19,23 @@ jobs:
             cmd/version.go
           package-name: git-view-work-item
           release-type: simple
+    outputs: 
+      release_created: ${{ steps.release.outputs.release_created }}
+  goreleaser:
+    runs-on: ubuntu-latest
+    if: ${{ steps.release-please.outputs.release_created }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: git fetch --force --tags
+      - uses: actions/setup-go@v4
+        with:
+          go-version: stable
+      - uses: goreleaser/goreleaser-action@v5
+        with:
+          distribution: goreleaser
+          version: latest
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
