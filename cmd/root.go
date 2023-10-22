@@ -10,9 +10,9 @@ import (
 	"text/template"
 
 	"github.com/atotto/clipboard"
+	"github.com/pkg/browser"
 	"github.com/spf13/cobra"
 	"go.huggins.io/prj/git-vwi/lib/git"
-	"go.huggins.io/prj/git-vwi/lib/shell"
 	"go.huggins.io/prj/git-vwi/lib/util"
 )
 
@@ -98,7 +98,7 @@ Learn more about Go text templates at https://pkg.go.dev/text/template`,
 			fmt.Println(finalUrl.String())
 			// TODO: make compatible with non-macOS environments
 			if !rootCmdBoolCopy {
-				shell.Execute("open", finalUrl.String())
+				browser.OpenURL(finalUrl.String())
 			} else {
 				clipboard.WriteAll(finalUrl.String())
 			}
