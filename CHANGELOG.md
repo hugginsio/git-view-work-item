@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/hugginsio/git-view-work-item/compare/v1.2.0...v1.3.0) (2023-10-22)
+
+
+### Features
+
+* **actions:** give goreleaser contents write permission ([7c2532e](https://github.com/hugginsio/git-view-work-item/commit/7c2532e749a4d8b3f61e07597d2fc92c79a472f9))
+
 ## [1.2.0](https://github.com/hugginsio/git-view-work-item/compare/v1.1.0...v1.2.0) (2023-10-22)
 
 
