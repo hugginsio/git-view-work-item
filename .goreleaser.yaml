@@ -2,6 +2,8 @@
 # vim: set ts=2 sw=2 tw=0 fo=cnqoj
 # yaml-language-server: $schema=https://goreleaser.com/static/schema.json
 
+project_name: git-vwi
+
 before:
   hooks:
     - go mod tidy
