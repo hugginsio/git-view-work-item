@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.1](https://github.com/hugginsio/git-view-work-item/compare/v1.5.0...v1.5.1) (2023-10-28)
+
+
+### Bug Fixes
+
+* **root:** remove duplicate Identifier from help ([302bf19](https://github.com/hugginsio/git-view-work-item/commit/302bf19ceff4d2fa0f226a8b3b8622184e035b75))
+* **root:** remove duplicate Identifier from help ([#22](https://github.com/hugginsio/git-view-work-item/issues/22)) ([41b26e0](https://github.com/hugginsio/git-view-work-item/commit/41b26e08e401d8aa4a4131adb7184309c8c7f76c))
+
 ## [1.5.0](https://github.com/hugginsio/git-view-work-item/compare/v1.4.0...v1.5.0) (2023-10-22)
 
 
