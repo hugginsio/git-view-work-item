@@ -30,7 +30,6 @@ current branch. This add-on relies on configuration through Git's global propert
 
 You can use Go text templates to insert the following properties into the URL:
 
-- Identifier (the identifier extracted from the current branch name)
 - Directory: the current directory name (but not the full path).
 - Identifier: the identifier extracted from the current branch name.
 - Repository: the repository name, taken from remote.origin.url.
