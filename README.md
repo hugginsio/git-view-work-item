@@ -22,10 +22,27 @@ You can learn more about Go text templates in the [package documentation][go-tex
 
 ## Installation
 
+### Homebrew
+
+```
+brew install hugginsio/tap/git-vwi
+```
+
+### Manual installation
+
 1. Navigate to the [releases page][github-releases] and download the appropriate binary for your system.
 2. Copy the `git-vwi` binary to somewhere on your PATH.
 3. Run `git vwi -h` in your terminal to validate.
 
+### Building from source
+
+1. Install the latest version of [Go][go-install].
+2. Install the latest version of [Task][task-install].
+3. Clone the repository.
+4. Run `task install`.
+
 <!-- References -->
 [go-text-templates]: https://pkg.go.dev/text/template
 [github-releases]: https://github.com/hugginsio/git-view-work-item/releases
+[go-install]: https://go.dev/dl/
+[task-install]: https://taskfile.dev/installation/
