@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -18,6 +19,7 @@ import (
 
 var (
 	rootCmdBoolCopy bool
+	rootCmdBoolRaw  bool
 	rootCmd         = &cobra.Command{
 		Use:   "git-vwi",
 		Short: "Git add-on for opening work item details in your browser based on the current branch.",
@@ -94,12 +96,17 @@ Learn more about Go text templates at https://pkg.go.dev/text/template`,
 			templ := template.Must(template.New("templ").Parse(urlConfig))
 			templ.Execute(&finalUrl, props)
 
-			fmt.Println(finalUrl.String())
-			// TODO: make compatible with non-macOS environments
-			if !rootCmdBoolCopy {
-				browser.OpenURL(finalUrl.String())
+			if rootCmdBoolRaw {
+				propsJson, _ := json.Marshal(props)
+				fmt.Println(string(propsJson))
 			} else {
+				fmt.Println(finalUrl.String())
+			}
+
+			if rootCmdBoolCopy {
 				clipboard.WriteAll(finalUrl.String())
+			} else if !rootCmdBoolRaw {
+				browser.OpenURL(finalUrl.String())
 			}
 		},
 	}
@@ -115,4 +122,7 @@ func Execute() {
 func init() {
 	rootCmd.CompletionOptions.DisableDefaultCmd = true
 	rootCmd.PersistentFlags().BoolVarP(&rootCmdBoolCopy, "copy", "c", rootCmdBoolCopy, "copy URL to clipboard instead of opening in browser")
+	rootCmd.PersistentFlags().BoolVarP(&rootCmdBoolRaw, "raw", "r", rootCmdBoolRaw, "print Properties object to stdout in JSON format")
+
+	rootCmd.MarkFlagsMutuallyExclusive("copy", "raw")
 }
