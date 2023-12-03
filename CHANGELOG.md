@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/hugginsio/git-view-work-item/compare/v1.5.1...v1.6.0) (2023-12-03)
+
+
+### Features
+
+* add raw flag to print Properties object ([fc13c57](https://github.com/hugginsio/git-view-work-item/commit/fc13c57894edd7ad9aef9cdf731199cef7c0f70b)), closes [#24](https://github.com/hugginsio/git-view-work-item/issues/24)
+
 ## [1.5.1](https://github.com/hugginsio/git-view-work-item/compare/v1.5.0...v1.5.1) (2023-10-28)
 
 

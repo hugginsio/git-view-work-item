@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	Version    = "1.5.1" // x-release-please-version
+	Version    = "1.6.0" // x-release-please-version
 	versionCmd = &cobra.Command{
 		Use:   "version",
 		Short: "Display version information about git-vwi",
