@@ -1,6 +1,6 @@
 # git-view-work-item
 
-Git add-on for opening work item details in your browser based on the current branch.
+Git add-on for opening work item details in your browser based on the current branch. You can also print the JSON properties to `stdout` for integration with other workflows.
 It uses a regular expression to extract a work item identifier from the current branch name and inserts it into a URL via Go text templates.
 
 You can configure the add-on's behavior through Git properties. See the following example:
